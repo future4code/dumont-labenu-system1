@@ -3,6 +3,7 @@ import cors from "cors";
 import { AddressInfo } from "net";
 import knex from "knex";
 import dotenv from "dotenv";
+import { postTeacher } from "./endpoints/postTeacher";
 
 dotenv.config();
 export const connection = knex({
@@ -23,6 +24,7 @@ app.use(cors());
 
 
 
+app.post("/labenu/teacher", postTeacher)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
