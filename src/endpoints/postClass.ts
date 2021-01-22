@@ -9,8 +9,13 @@ export const postClass = async (req: Request, res: Response): Promise<void> => {
             throw new Error(`"module" deve ser entre 1 e 7`)
         }
 
+        let classType = req.body.name
+        if(req.body.class_type === "nocturnal"){
+            classType = `${req.body.name}-na-night`
+        }
+
         await createClass(
-          req.body.name,
+          classType,
           req.body.start_date,
           req.body.end_date,
           req.body.module,
