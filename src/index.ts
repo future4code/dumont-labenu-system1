@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { postClass } from "./endpoints/postClass";
 import { postStudent } from "./endpoints/postStudent";
 import { getStudentAge } from "./endpoints/getStudentAge";
+import { getStudentByClass } from "./endpoints/getStudentByClass";
 
 dotenv.config();
 export const connection = knex({
@@ -28,6 +29,7 @@ app.use(cors());
 app.post("/labenu/class", postClass)
 app.post("/labenu/class/student", postStudent)
 app.get("/labenu/class/student/:id", getStudentAge)
+app.get("/labenu/class/:id", getStudentByClass)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
