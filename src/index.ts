@@ -7,6 +7,7 @@ import { postClass } from "./endpoints/postClass";
 import { postStudent } from "./endpoints/postStudent";
 import { getStudentAge } from "./endpoints/getStudentAge";
 import { getStudentByClass } from "./endpoints/getStudentByClass";
+import {getTeacherByClass} from './endpoints/getTeacherByClass';
 
 dotenv.config();
 export const connection = knex({
@@ -30,7 +31,7 @@ app.post("/labenu/class", postClass)
 app.post("/labenu/class/student", postStudent)
 app.get("/labenu/class/student/:id", getStudentAge)
 app.get("/labenu/class/:id", getStudentByClass)
-app.get("/labenu/class/teacher/:id")
+app.get("/labenu/class/teacher/:id", getTeacherByClass)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {

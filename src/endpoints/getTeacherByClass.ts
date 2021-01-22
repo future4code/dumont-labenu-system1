@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import {selectTeacherByMission} from '../data/selectTeacherByMission'
 
 
-export const getStudentByClass = async(req: Request, res: Response) => {
+export const getTeacherByClass = async(req: Request, res: Response) => {
     let errorCode: number = 400;
     try {
         if(isNaN(Number(req.params.id))) {
