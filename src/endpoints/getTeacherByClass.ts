@@ -17,6 +17,6 @@ export const getTeacherByClass = async(req: Request, res: Response) => {
         res.status(200).send(result)
 
     } catch(error){
-
+        res.status(errorCode).send(error.message)
     }
 }
