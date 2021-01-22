@@ -30,6 +30,7 @@ app.post("/labenu/class", postClass)
 app.post("/labenu/class/student", postStudent)
 app.get("/labenu/class/student/:id", getStudentAge)
 app.get("/labenu/class/:id", getStudentByClass)
+app.get("/labenu/class/teacher/:id")
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
