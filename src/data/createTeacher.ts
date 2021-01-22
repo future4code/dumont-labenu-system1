@@ -1,14 +1,21 @@
 import { connection } from "../index";
 
-export const createTeacher = async (name: string, email: string, birth_date: string, specialty: string): Promise<void> => {
-  const result = await connection.raw(`
-    INSERT INTO students (name, email, birth_date, hobby)
-    VALUES
-    ${name}
-    "${email}"
-    "${birth_date}"
-    ${specialty}
-    `);
-}
-
-
+export const createTeacher = async (
+  name: string,
+  email: string,
+  birth_date: Date,
+  specialities: string,
+  mission_id: number
+): Promise<void> => {
+  await connection.raw(`
+    INSERT INTO teachers (name, email, birth_date, specialities, mission_id)
+    VALUES(
+    "${name}",
+    "${email}",
+    "${birth_date}",
+    "${specialities}",
+    ${mission_id}
+    );
+    
+  `);
+};
